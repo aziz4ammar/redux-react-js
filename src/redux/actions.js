@@ -1,4 +1,4 @@
-import { COMPLETE, DELETE } from "./actionTypes"
+import { ADD, COMPLETE, DELETE } from "./actionTypes"
 
 export const del=(id)=>{
     return {
@@ -11,5 +11,12 @@ export const comp=(id)=>{
     return {
         type:COMPLETE,
         payload:id
+    }
+}
+
+export const add=(newTask)=>{
+    return {
+        type:ADD,
+        payload:newTask
     }
 }

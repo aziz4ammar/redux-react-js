@@ -1,4 +1,4 @@
-import { COMPLETE, DELETE } from "./actionTypes"
+import { ADD, COMPLETE, DELETE } from "./actionTypes"
 
 const init=[
     {
@@ -20,7 +20,10 @@ const reducer=(state=init,{type,payload})=>{
         
         case COMPLETE:
             return state.map(el=>el.id==payload?{...el,isDone:!el.isDone}:el)
-            
+
+
+        case ADD:
+            return [...state,payload] 
     
         default:
             return state
